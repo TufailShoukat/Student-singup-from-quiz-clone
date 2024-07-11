@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Signup</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="container">
+  <form id="student_form">
+    <h1> <span>STUDENT</span> SIGNUP FORM </h1>
+    <div class="box">
+    <img src="" alt="">
+    <input type="text" id="student_name" placeholder="Enter your name" required>
+    <input type="text" id="student_father_name" placeholder="Enter your father name" required>
+    <input type="number" id="student_rollno" placeholder="Enter your roll number" required>
+    <input type="email" id="student_email" placeholder="Enter your email" required>
+    <button type="submit" id="enter_student_btn">Enter</button>
+  </form>
+</div>
+</body>
+</html>
+</div>
+
+  <script>
+    var studentForm = document.getElementById("student_form");
+    studentForm.addEventListener('submit', function(event) {
+      event.preventDefault();
+      var studentName = document.getElementById("student_name").value;
+      var studentFatherName = document.getElementById("student_father_name").value;
+      var studentRollNo = document.getElementById("student_rollno").value;
+      var studentEmail = document.getElementById("student_email").value;
+    
+      if (studentName && studentFatherName && studentRollNo && studentEmail ) {
+        console.log("All fields are filled. Redirecting to quiz.html...");
+        localStorage.setItem('studentName', studentName);
+        localStorage.setItem('studentRollNo', studentRollNo);
+        localStorage.setItem('studentEmail', studentEmail);
+        window.location.href = "./quiz.html";
+
+      } else {
+        alert("Please fill all the fields.");
+      }
+    });
+  </script>
+
+</body>
+</html>
+
+
+
